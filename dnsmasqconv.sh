@@ -1,4 +1,4 @@
-#Read Log file to tmp dir
+#Read Log file to tmp dir, extracting only "query" requests
 cat /var/log/pihole.log | grep -P "query\[A" > /tmp/pilog.log
 #Encapsulate dnsmasq in commas
 sed -i 's/\ dnsmasq\[/\,dnsmasq\,/g' /tmp/pilog.log
